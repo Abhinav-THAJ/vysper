@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-midnight: #1B243A;
+  --color-navy: #1B243A;
+  --color-navy-dark: #121929;
+  --color-navy-deep: #0D1322;
+  --color-navy-light: #25314D;
+  --color-champagne: #E9D9C2;
+  --color-champagne-light: #F5EFE6;
+  --color-champagne-dark: #D4BE9F;
+  --color-ivory: #F8F5EF;
+  --color-ivory-light: #FDFAF5;
+  --color-ivory-dark: #ECE7DE;
+  --color-slate: #8990A0;
+  --color-slate-light: #A4AAB7;
+  --color-charcoal: #34352F;
+  --color-charcoal-muted: #5B5D53;
+  --color-charcoal-light: #72746B;
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+  --background: #F8F5EF;
+  --foreground: #34352F;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #F8F5EF;
+  color: #34352F;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #F8F5EF;
+  color: #34352F;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+::selection {
+  background-color: #E9D9C2;
+  color: #1B243A;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F5EF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4BE9F;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8990A0;
+}
+
+/* Editorial typography and subtle ornaments */
+.font-editorial-heading {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  letter-spacing: -0.02em;
+  font-feature-settings: "liga" 1, "dlig" 1;
+}
+
+.text-eyebrow {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.gold-glow {
+  box-shadow: 0 0 45px -10px rgba(233, 217, 194, 0.4);
+}
+
+.navy-gradient {
+  background: linear-gradient(180deg, #1B243A 0%, #121929 100%);
+}
+
+.ivory-gradient {
+  background: linear-gradient(180deg, #FDFAF5 0%, #F8F5EF 100%);
+}
+
+.editorial-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #E9D9C2, transparent);
+}
+
+/* Responsive container */
+.vesper-container {
+  width: 100%;
+  max-width: 1380px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .vesper-container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .vesper-container {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}

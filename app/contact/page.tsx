@@ -5,9 +5,9 @@ import { BRAND } from '@/lib/content';
 import EnquiryForm from '@/components/forms/EnquiryForm';
 
 export const metadata: Metadata = {
-  title: 'Contact & Consultation | Connect with Vesper Wedding Company',
+  title: 'Contact Us & Consultation | Connect with Vesper Wedding Company',
   description:
-    'Schedule a bespoke wedding planning consultation with Adnan Ibn Zain at Vesper Wedding Company. Direct inquiries via WhatsApp (+971562854779) or our confidential consultation form across the UAE.',
+    'Schedule a bespoke wedding planning consultation with Adnan Ibn Zain at Vesper Wedding Company. Direct inquiries via WhatsApp (+971 56 285 4779) or our confidential consultation form across the UAE.',
 };
 
 export default function ContactPage() {
@@ -22,7 +22,7 @@ export default function ContactPage() {
           </div>
 
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-navy font-light leading-[1.12] mb-6">
-            Contact & Consultation
+            Contact Us & Consultation
           </h1>
 
           <div className="w-16 h-[1px] bg-champagne-dark mx-auto mb-8" />
@@ -43,59 +43,64 @@ export default function ContactPage() {
             {/* Primary WhatsApp Card */}
             <div className="bg-navy text-ivory p-8 rounded-xs shadow-xl border border-champagne/30 space-y-6">
               <div>
-                <span className="text-eyebrow text-champagne block mb-1">Direct Liaison</span>
-                <h2 className="font-serif text-2xl text-white font-medium">
+                <span className="text-eyebrow text-champagne block mb-1 tracking-[0.2em]">Direct Studio Liaison</span>
+                <h2 className="font-serif text-2xl md:text-3xl text-white font-light">
                   Speak Directly
                 </h2>
-                <p className="text-slate text-xs mt-1">
-                  Lead Coordinator: <span className="text-champagne">{BRAND.contactPerson}</span>
+                <p className="text-slate text-xs mt-1.5 font-light">
+                  Lead Coordinator: <span className="text-champagne font-normal">{BRAND.contactPerson}</span>
                 </p>
               </div>
 
-              <div className="space-y-4 pt-2">
-                {/* WhatsApp */}
+              <div className="space-y-4 pt-1">
+                {/* WhatsApp rendered as elegant typography/font styling */}
                 <a
                   href={BRAND.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-3.5 p-3.5 bg-champagne text-navy hover:bg-white transition-all duration-300 rounded-xs font-sans shadow-md"
+                  className="block p-4 bg-navy-light/40 hover:bg-champagne/15 border border-champagne/30 hover:border-champagne transition-all duration-300 rounded-xs group"
                 >
-                  <MessageSquare className="w-5 h-5 fill-current" />
-                  <div>
-                    <span className="text-[0.68rem] uppercase tracking-wider block font-semibold">
-                      WhatsApp Instant Chat
+                  <div className="flex items-center justify-between">
+                    <span className="font-serif text-lg tracking-wide text-champagne group-hover:text-champagne-light">
+                      WhatsApp Concierge
                     </span>
-                    <span className="text-xs font-mono font-medium">{BRAND.phoneDisplay}</span>
+                    <span className="text-[0.65rem] uppercase tracking-widest text-champagne/70 group-hover:text-champagne border border-champagne/30 px-2 py-0.5 rounded-xs">
+                      Instant Chat
+                    </span>
                   </div>
+                  <div className="mt-2 font-serif text-2xl text-white font-light tracking-wide group-hover:text-champagne transition-colors">
+                    {BRAND.phoneDisplay}
+                  </div>
+                  <p className="text-[0.72rem] text-slate mt-1 font-light">
+                    Direct line for discreet event inquiries & availability
+                  </p>
                 </a>
 
                 {/* Telephone */}
                 <a
                   href={`tel:${BRAND.phone}`}
-                  className="flex items-center space-x-3.5 p-3.5 bg-navy-light/60 text-ivory hover:bg-champagne hover:text-navy border border-champagne/20 transition-all duration-300 rounded-xs font-sans"
+                  className="block p-4 bg-navy-dark/60 hover:bg-navy-light/50 border border-white/10 hover:border-champagne/30 transition-all duration-300 rounded-xs group"
                 >
-                  <Phone className="w-4 h-4 text-champagne" />
-                  <div>
-                    <span className="text-[0.65rem] uppercase tracking-wider block text-slate">
-                      Telephone
-                    </span>
-                    <span className="text-xs font-mono">{BRAND.phoneDisplay}</span>
-                  </div>
+                  <span className="font-serif text-base text-slate group-hover:text-champagne tracking-wide block">
+                    Direct Telephone
+                  </span>
+                  <span className="font-serif text-xl text-ivory font-light tracking-wide block mt-1">
+                    {BRAND.phoneDisplay}
+                  </span>
                 </a>
 
                 {/* Email as supplied by client */}
-                <div className="p-3.5 bg-navy-dark/70 border border-champagne/15 rounded-xs space-y-1">
-                  <span className="text-[0.65rem] uppercase tracking-wider block text-slate flex items-center space-x-1.5">
-                    <Mail className="w-3 h-3 text-champagne" />
-                    <span>Client-Supplied Studio Email</span>
+                <div className="p-4 bg-navy-dark/60 border border-white/10 rounded-xs space-y-1.5">
+                  <span className="font-serif text-base text-slate tracking-wide block">
+                    Studio Correspondence
                   </span>
                   <a
                     href={`mailto:${BRAND.emailClientSupplied}`}
-                    className="text-xs font-mono text-champagne hover:underline block break-all"
+                    className="font-serif text-lg text-champagne hover:underline block break-all font-light tracking-wide"
                   >
                     {BRAND.emailClientSupplied}
                   </a>
-                  <p className="text-[0.65rem] text-slate/75 italic pt-1">
+                  <p className="text-[0.68rem] text-slate/80 italic font-light pt-0.5">
                     * Official studio inbox registered per client specification.
                   </p>
                 </div>
@@ -103,11 +108,11 @@ export default function ContactPage() {
 
               {/* Service Area */}
               <div className="pt-4 border-t border-champagne/20 space-y-2 text-xs">
-                <div className="flex items-start space-x-2 text-slate">
+                <div className="flex items-start space-x-2 text-slate font-light">
                   <MapPin className="w-4 h-4 text-champagne shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-ivory font-medium">Service Coverage</p>
-                    <p className="text-[0.75rem] text-slate leading-relaxed">
+                    <p className="text-ivory font-normal font-serif text-sm">Service Coverage</p>
+                    <p className="text-[0.78rem] text-slate/90 leading-relaxed pt-0.5">
                       All over the United Arab Emirates (Dubai, Abu Dhabi, Sharjah, Ras Al Khaimah, Ajman, Fujairah, Umm Al-Quwain).
                     </p>
                   </div>

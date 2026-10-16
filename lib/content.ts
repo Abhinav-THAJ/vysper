@@ -414,6 +414,21 @@ export const SERVICES: ServiceItem[] = [
 
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
+    id: "dubai-iconic-skyline-reception",
+    title: "Iconic Dubai Skyline Evening Reception",
+    category: "tablescapes",
+    categoryLabel: "Reception Tablescapes",
+    conceptSubtitle: "Editorial Design Concept · Downtown Dubai",
+    image: "/images/portfolio/dubai-iconic-skyline-wedding.jpg",
+    imageAlt: "Breathtaking luxury open-air wedding reception overlooking Burj Khalifa and Downtown Dubai skyline",
+    aspectRatio: "wide",
+    atmosphere: "Iconic Dubai skyline, ambient candlelight, palatial blue-hour elegance",
+    locationContext: "Open-Air Palatial Terrace, Downtown Dubai",
+    palette: ["#1B243A", "#E9D9C2", "#F8F5EF", "#34352F"],
+    description: "An extraordinary twilight celebration overlooking the iconic Dubai skyline and Burj Khalifa, featuring candlelit banquets dressed in cascading white orchids and roses.",
+    isConceptEditorial: true
+  },
+  {
     id: "dusk-courtyard-reception",
     title: "Twilight Palatial Reception",
     category: "tablescapes",
@@ -504,18 +519,18 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     isConceptEditorial: true
   },
   {
-    id: "cultural-splendor-stage",
-    title: "The Modern Heritage Kosha",
+    id: "royal-indian-wedding-mandap",
+    title: "Royal Indian Heritage Mandap",
     category: "cultural",
     categoryLabel: "Cultural Celebrations",
-    conceptSubtitle: "Editorial Design Concept · Multicultural",
-    image: "/images/weddings/cultural-celebration-stage.jpg",
-    imageAlt: "Architectural stage design with cascading marigolds, ivory roses and brass lanterns",
-    aspectRatio: "landscape",
-    atmosphere: "Rich celebration honoring heritage with modern restraint",
-    locationContext: "Emirati Ballroom",
-    palette: ["#E9D9C2", "#1B243A", "#34352F"],
-    description: "A celebration of cultural richness, intertwining traditional floral garlands with contemporary architectural archways, gilded accents, and lantern-lit pathways.",
+    conceptSubtitle: "Editorial Design Concept · Royal Indian Touch",
+    image: "/images/weddings/indian-touch-wedding-mandap.jpg",
+    imageAlt: "Opulent royal Indian wedding Mandap with fresh marigold garlands, mogra florals, brass urlis, and regal carved arches",
+    aspectRatio: "wide",
+    atmosphere: "Regal Indian wedding grandeur, auspicious marigolds, warm diya illumination",
+    locationContext: "Grand Palatial Ballroom, UAE",
+    palette: ["#E9D9C2", "#D4BE9F", "#B8860B", "#1B243A"],
+    description: "An opulent Indian wedding celebration featuring a royal carved Mandap draped in cascading marigolds, fragrant white mogra, floating diya brass urlis, and ambient candlelight.",
     isConceptEditorial: true
   },
   {

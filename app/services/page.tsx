@@ -35,25 +35,6 @@ export default function ServicesPage() {
             From complete wedding orchestration to bespoke stage design and personal pre-wedding care, 
             every offering is tailored to your unique celebration across the United Arab Emirates.
           </p>
-
-          {/* Quick Anchor Navigation */}
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-10 text-xs uppercase tracking-wider">
-            <a href="#planning" className="px-4 py-2 bg-white border border-champagne/40 rounded-xs hover:bg-navy hover:text-white transition-colors">
-              Planning
-            </a>
-            <a href="#design" className="px-4 py-2 bg-white border border-champagne/40 rounded-xs hover:bg-navy hover:text-white transition-colors">
-              Design & Styling
-            </a>
-            <a href="#celebrations" className="px-4 py-2 bg-white border border-champagne/40 rounded-xs hover:bg-navy hover:text-white transition-colors">
-              Celebrations
-            </a>
-            <a href="#creative" className="px-4 py-2 bg-white border border-champagne/40 rounded-xs hover:bg-navy hover:text-white transition-colors">
-              Creative Services
-            </a>
-            <a href="#luxe-prep" className="px-4 py-2 bg-navy text-champagne border border-champagne/40 rounded-xs hover:bg-white hover:text-navy transition-colors font-medium">
-              ★ Luxe Prep Programme
-            </a>
-          </div>
         </div>
       </section>
 

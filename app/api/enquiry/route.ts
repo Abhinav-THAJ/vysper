@@ -5,6 +5,7 @@ interface EnquiryPayload {
   email: string;
   phone: string;
   eventType: string;
+  numberOfEvents?: string;
   preferredDate?: string;
   location?: string;
   guestCount?: string;
@@ -35,6 +36,7 @@ export async function POST(req: NextRequest) {
       email,
       phone,
       eventType,
+      numberOfEvents,
       preferredDate,
       location,
       guestCount,
@@ -75,8 +77,6 @@ export async function POST(req: NextRequest) {
     }
 
     // 3. Genuine Enquiry Delivery Workflow
-    // In production, configure environment variables:
-    // RESEND_API_KEY, RESEND_FROM_EMAIL, STUDIO_NOTIFICATION_EMAIL
     const resendApiKey = process.env.RESEND_API_KEY;
     const notificationEmail = process.env.STUDIO_NOTIFICATION_EMAIL || 'hello@vesperweddingcompany.com';
 
@@ -87,6 +87,7 @@ export async function POST(req: NextRequest) {
       email: email.trim(),
       phone: phone.trim(),
       eventType,
+      numberOfEvents: numberOfEvents || '1 Event',
       preferredDate: preferredDate || 'Not specified',
       location: location || 'All UAE',
       guestCount: guestCount || 'Not specified',

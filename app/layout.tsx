@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/navigation/Footer";
-import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp";
 import { BRAND } from "@/lib/content";
 
 export const viewport: Viewport = {
@@ -102,7 +101,6 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-ivory text-charcoal font-sans">
         <Navbar />
         <main className="flex-1">{children}</main>
-        <FloatingWhatsApp />
         <Footer />
       </body>
     </html>

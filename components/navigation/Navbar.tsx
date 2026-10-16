@@ -12,7 +12,7 @@ const NAV_LINKS = [
   { href: '/about', label: 'About Vesper' },
   { href: '/services', label: 'Services & Luxe Prep' },
   { href: '/portfolio', label: 'Portfolio' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/contact', label: 'Contact Us' },
 ];
 
 export default function Navbar() {

@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { CheckCircle2, AlertCircle, Loader2, ArrowUpRight } from 'lucide-react';
+import { CheckCircle2, AlertCircle, Loader2, ArrowUpRight, ChevronDown, Check } from 'lucide-react';
 import { BRAND } from '@/lib/content';
 
 const EVENT_TYPES = [
@@ -15,6 +15,14 @@ const EVENT_TYPES = [
   'Groom Luxe Prep Programme',
   'Private Anniversary or Dinner',
   'Corporate Luxury Event',
+];
+
+const EVENT_COUNTS = [
+  '1 Event (Single Celebration / Reception)',
+  '2 Events (e.g. Ceremony & Reception)',
+  '3 Events (e.g. Pre-Wedding, Sangeet & Reception)',
+  '4+ Events (Multi-Day Cultural Festivities)',
+  'Intimate Milestone Gathering',
 ];
 
 const EMIRATES = [
@@ -38,6 +46,7 @@ const GUEST_COUNTS = [
 ];
 
 const BUDGET_RANGES = [
+  'Less than AED 150,000',
   'AED 150,000 – AED 300,000',
   'AED 300,000 – AED 600,000',
   'AED 600,000 – AED 1,000,000',
@@ -57,6 +66,108 @@ const AVAILABLE_SERVICES = [
   'Fine Art Photography & Video Curation',
 ];
 
+interface LuxurySelectProps {
+  id: string;
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  options: string[];
+  placeholder?: string;
+  required?: boolean;
+  error?: string;
+}
+
+function LuxurySelect({
+  id,
+  label,
+  value,
+  onChange,
+  options,
+  placeholder = 'Select an option...',
+  required = false,
+  error,
+}: LuxurySelectProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  return (
+    <div className="relative" ref={dropdownRef}>
+      <label htmlFor={id} className="block text-xs uppercase tracking-wider text-charcoal font-medium mb-2">
+        {label} {required && <span className="text-red-500">*</span>}
+      </label>
+      <button
+        type="button"
+        id={id}
+        onClick={() => setIsOpen(!isOpen)}
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
+        className={`w-full px-4 py-3 text-sm bg-ivory/50 hover:bg-ivory border rounded-xs text-left flex items-center justify-between transition-all duration-200 cursor-pointer ${
+          error
+            ? 'border-red-400'
+            : isOpen
+            ? 'border-navy ring-1 ring-navy/20'
+            : 'border-champagne/40 hover:border-champagne-dark'
+        }`}
+      >
+        <span className={`truncate mr-2 ${value ? 'text-charcoal font-normal' : 'text-slate font-light'}`}>
+          {value || placeholder}
+        </span>
+        <ChevronDown
+          className={`w-4 h-4 text-champagne-dark shrink-0 transition-transform duration-300 ${
+            isOpen ? 'rotate-180 text-navy' : ''
+          }`}
+        />
+      </button>
+
+      {isOpen && (
+        <div
+          role="listbox"
+          className="absolute z-40 left-0 right-0 mt-1.5 bg-white border border-champagne/50 rounded-xs shadow-xl max-h-60 overflow-y-auto py-1 animate-in fade-in zoom-in-95 duration-150"
+        >
+          {options.map((option) => {
+            const isSelected = value === option;
+            return (
+              <button
+                type="button"
+                key={option}
+                role="option"
+                aria-selected={isSelected}
+                onClick={() => {
+                  onChange(option);
+                  setIsOpen(false);
+                }}
+                className={`w-full text-left px-4 py-2.5 text-xs transition-colors flex items-center justify-between cursor-pointer ${
+                  isSelected
+                    ? 'bg-champagne/20 text-navy font-medium'
+                    : 'text-charcoal hover:bg-ivory hover:text-navy'
+                }`}
+              >
+                <span className="truncate pr-2">{option}</span>
+                {isSelected && (
+                  <Check className="w-3.5 h-3.5 text-champagne-dark shrink-0" />
+                )}
+              </button>
+            );
+          })}
+        </div>
+      )}
+      {error && <p className="mt-1 text-[0.72rem] text-red-600">{error}</p>}
+    </div>
+  );
+}
+
 export default function EnquiryForm() {
   const searchParams = useSearchParams();
   const preselectedService = searchParams.get('service');
@@ -69,10 +180,11 @@ export default function EnquiryForm() {
     eventType: preselectedService
       ? (preselectedService.includes('Luxe Prep') ? preselectedService : 'Wedding Ceremony & Reception')
       : '',
+    numberOfEvents: '1 Event (Single Celebration / Reception)',
     preferredDate: '',
     location: 'Dubai',
     guestCount: '150 – 300 guests',
-    budgetRange: 'Prefer to discuss during consultation',
+    budgetRange: 'Less than AED 150,000',
     servicesOfInterest: preselectedService ? [preselectedService] : ([] as string[]),
     message: preselectedVision ? `Inquiring regarding aesthetic vision: ${preselectedVision}` : '',
     privacyConsent: false,
@@ -168,10 +280,11 @@ export default function EnquiryForm() {
           email: '',
           phone: '',
           eventType: '',
+          numberOfEvents: '1 Event (Single Celebration / Reception)',
           preferredDate: '',
           location: 'Dubai',
           guestCount: '150 – 300 guests',
-          budgetRange: 'Prefer to discuss during consultation',
+          budgetRange: 'Less than AED 150,000',
           servicesOfInterest: [],
           message: '',
           privacyConsent: false,
@@ -342,31 +455,16 @@ export default function EnquiryForm() {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Event Type */}
-            <div>
-              <label htmlFor="eventType" className="block text-xs uppercase tracking-wider text-charcoal font-medium mb-2">
-                Event Type <span className="text-red-500">*</span>
-              </label>
-              <select
-                id="eventType"
-                name="eventType"
-                required
-                value={formData.eventType}
-                onChange={(e) => setFormData({ ...formData, eventType: e.target.value })}
-                className={`w-full px-4 py-3 text-sm bg-ivory/50 border rounded-xs focus:outline-none focus:ring-1 focus:ring-navy transition-colors ${
-                  errors.eventType ? 'border-red-400' : 'border-champagne/40'
-                }`}
-              >
-                <option value="">Select celebration type...</option>
-                {EVENT_TYPES.map((type) => (
-                  <option key={type} value={type}>
-                    {type}
-                  </option>
-                ))}
-              </select>
-              {errors.eventType && (
-                <p className="mt-1 text-[0.72rem] text-red-600">{errors.eventType}</p>
-              )}
-            </div>
+            <LuxurySelect
+              id="eventType"
+              label="Event Type"
+              required
+              value={formData.eventType}
+              onChange={(val) => setFormData({ ...formData, eventType: val })}
+              options={EVENT_TYPES}
+              placeholder="Select celebration type..."
+              error={errors.eventType}
+            />
 
             {/* Preferred Date */}
             <div>
@@ -384,66 +482,42 @@ export default function EnquiryForm() {
             </div>
 
             {/* Emirate / Location */}
-            <div>
-              <label htmlFor="location" className="block text-xs uppercase tracking-wider text-charcoal font-medium mb-2">
-                Emirate / Location
-              </label>
-              <select
-                id="location"
-                name="location"
-                value={formData.location}
-                onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                className="w-full px-4 py-3 text-sm bg-ivory/50 border border-champagne/40 rounded-xs focus:outline-none focus:ring-1 focus:ring-navy transition-colors"
-              >
-                {EMIRATES.map((emirate) => (
-                  <option key={emirate} value={emirate}>
-                    {emirate}
-                  </option>
-                ))}
-              </select>
-            </div>
+            <LuxurySelect
+              id="location"
+              label="Emirate / Location"
+              value={formData.location}
+              onChange={(val) => setFormData({ ...formData, location: val })}
+              options={EMIRATES}
+            />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-            {/* Guest Count */}
-            <div>
-              <label htmlFor="guestCount" className="block text-xs uppercase tracking-wider text-charcoal font-medium mb-2">
-                Estimated Guest Count
-              </label>
-              <select
-                id="guestCount"
-                name="guestCount"
-                value={formData.guestCount}
-                onChange={(e) => setFormData({ ...formData, guestCount: e.target.value })}
-                className="w-full px-4 py-3 text-sm bg-ivory/50 border border-champagne/40 rounded-xs focus:outline-none focus:ring-1 focus:ring-navy transition-colors"
-              >
-                {GUEST_COUNTS.map((gc) => (
-                  <option key={gc} value={gc}>
-                    {gc}
-                  </option>
-                ))}
-              </select>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+            {/* Number of Planned Events (Item 8) */}
+            <LuxurySelect
+              id="numberOfEvents"
+              label="No. of Events Planning"
+              value={formData.numberOfEvents}
+              onChange={(val) => setFormData({ ...formData, numberOfEvents: val })}
+              options={EVENT_COUNTS}
+            />
 
-            {/* Optional Budget Range */}
-            <div>
-              <label htmlFor="budgetRange" className="block text-xs uppercase tracking-wider text-charcoal font-medium mb-2">
-                Optional Budget Framework
-              </label>
-              <select
-                id="budgetRange"
-                name="budgetRange"
-                value={formData.budgetRange}
-                onChange={(e) => setFormData({ ...formData, budgetRange: e.target.value })}
-                className="w-full px-4 py-3 text-sm bg-ivory/50 border border-champagne/40 rounded-xs focus:outline-none focus:ring-1 focus:ring-navy transition-colors"
-              >
-                {BUDGET_RANGES.map((range) => (
-                  <option key={range} value={range}>
-                    {range}
-                  </option>
-                ))}
-              </select>
-            </div>
+            {/* Estimated Guest Count */}
+            <LuxurySelect
+              id="guestCount"
+              label="Estimated Guest Count"
+              value={formData.guestCount}
+              onChange={(val) => setFormData({ ...formData, guestCount: val })}
+              options={GUEST_COUNTS}
+            />
+
+            {/* Optional Budget Range (Item 7: with Less than 150,000) */}
+            <LuxurySelect
+              id="budgetRange"
+              label="Budget Framework"
+              value={formData.budgetRange}
+              onChange={(val) => setFormData({ ...formData, budgetRange: val })}
+              options={BUDGET_RANGES}
+            />
           </div>
         </div>
 

@@ -360,11 +360,12 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 relative h-[440px] md:h-[520px] rounded-xs overflow-hidden shadow-2xl">
               <Image
-                src="/images/details/luxe-prep-morning-suite.jpg"
-                alt="Bridal beauty preparation suite with morning light"
+                src="/images/details/bridal-groom-luxe-prep.jpg"
+                alt="Bridal & Groom Luxe Prep - pre-wedding wellness, skincare, styling, and composure consultation"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className="object-cover object-[center_15%]"
+                priority
               />
               <div className="absolute top-4 left-4 bg-navy text-champagne text-[0.68rem] tracking-[0.2em] uppercase px-3 py-1.5 rounded-xs">
                 Vesper Exclusive Programme

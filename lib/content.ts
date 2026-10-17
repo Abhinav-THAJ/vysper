@@ -388,8 +388,8 @@ export const SERVICES: ServiceItem[] = [
       "Styling Consultation: Comprehensive outfit, jewellery, veil, and look guidance for every event, from the engagement and pre-wedding functions to the grand reception.",
       "Fitness & Composure Consultation: A realistic, restorative plan to build strength, posture, and poise ahead of your celebrations without unsustainable regimens."
     ],
-    image: "/images/details/luxe-prep-morning-suite.jpg",
-    imageAlt: "Calm luxury getting-ready bridal suite with vanity and morning light",
+    image: "/images/details/bridal-luxe-prep.jpg",
+    imageAlt: "Indian Bridal Luxe Prep - pre-wedding skincare, styling, and composure suite",
     badge: "Vesper Exclusive",
     consultationFocus: "Bridal Luxe Prep Consultation"
   },
@@ -565,17 +565,17 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   {
     id: "luxe-prep-morning-atelier",
-    title: "Morning Sanctuary & Prep",
+    title: "Morning Composure & Luxe Prep",
     category: "bridal",
-    categoryLabel: "Bridal Portraits",
+    categoryLabel: "Bridal & Couple Portraits",
     conceptSubtitle: "Editorial Design Concept · Luxe Prep Suite",
-    image: "/images/details/luxe-prep-morning-suite.jpg",
-    imageAlt: "Bridal getting-ready suite with marble vanity table and morning sunlight",
-    aspectRatio: "landscape",
-    atmosphere: "Peaceful pre-wedding morning composure",
+    image: "/images/details/bridal-groom-luxe-prep.jpg",
+    imageAlt: "Bridal and Groom pre-wedding composure in arched sunlit dressing suite",
+    aspectRatio: "portrait",
+    atmosphere: "Peaceful pre-wedding morning composure and quiet luxury",
     locationContext: "Private Suite",
-    palette: ["#F8F5EF", "#E9D9C2", "#8990A0"],
-    description: "The calm before the celebration begins: a sunlit dressing suite equipped for mindful preparation, hydration, and composed elegance.",
+    palette: ["#F8F5EF", "#E9D9C2", "#1B243A"],
+    description: "The calm before the celebration begins: an arched sunlit suite equipped for mindful skincare, bespoke styling, and peaceful pre-wedding composure.",
     isConceptEditorial: true
   }
 ];

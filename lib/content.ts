@@ -388,8 +388,8 @@ export const SERVICES: ServiceItem[] = [
       "Styling Consultation: Comprehensive outfit, jewellery, veil, and look guidance for every event, from the engagement and pre-wedding functions to the grand reception.",
       "Fitness & Composure Consultation: A realistic, restorative plan to build strength, posture, and poise ahead of your celebrations without unsustainable regimens."
     ],
-    image: "/images/details/bridal-luxe-prep.jpg",
-    imageAlt: "Indian Bridal Luxe Prep - pre-wedding skincare, styling, and composure suite",
+    image: "/images/details/bridal-luxe-prep-western.jpg",
+    imageAlt: "Bridal Luxe Prep - pre-wedding skincare, styling, and composure suite",
     badge: "Vesper Exclusive",
     consultationFocus: "Bridal Luxe Prep Consultation"
   },

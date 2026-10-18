@@ -315,11 +315,11 @@ export default function ServicesPage() {
               <div className="space-y-6">
                 <div className="relative h-64 w-full rounded-xs overflow-hidden border border-champagne/20">
                   <Image
-                    src="/images/details/bridal-luxe-prep.jpg"
-                    alt="Indian Bridal Luxe Prep pre-wedding skincare, styling and composure portrait"
+                    src="/images/details/bridal-luxe-prep-western.jpg"
+                    alt="Bridal Luxe Prep pre-wedding skincare, styling and composure suite"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover object-[center_20%]"
+                    className="object-cover object-center"
                   />
                   <span className="absolute top-3 left-3 bg-champagne text-navy text-[0.62rem] uppercase tracking-widest font-semibold px-2.5 py-1 rounded-xs">
                     For The Bride

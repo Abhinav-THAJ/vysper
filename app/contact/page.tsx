@@ -7,7 +7,7 @@ import EnquiryForm from '@/components/forms/EnquiryForm';
 export const metadata: Metadata = {
   title: 'Contact Us & Consultation | Connect with Vesper Wedding Company',
   description:
-    'Schedule a bespoke wedding planning consultation with Adnan Ibn Zain at Vesper Wedding Company. Direct inquiries via WhatsApp (+971 56 285 4779) or our confidential consultation form across the UAE.',
+    'Schedule a bespoke wedding planning consultation with Neha & Adnan at Vesper Wedding Company. Direct inquiries via WhatsApp (+971 56 285 4779) or our confidential consultation form across the UAE.',
 };
 
 export default function ContactPage() {

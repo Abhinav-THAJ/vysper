@@ -9,7 +9,8 @@ export const BRAND = {
   meaning: "Named after Vesper, the evening star that appears as daylight softens — marking the peaceful beginning of a new chapter.",
   location: "United Arab Emirates",
   coverage: "All over the UAE",
-  contactPerson: "Adnan Ibn Zain",
+  contactPerson: "Neha & Adnan",
+  founders: "Neha & Adnan",
   phone: "+971562854779",
   phoneDisplay: "+971 56 285 4779",
   whatsappNumber: "971562854779",
@@ -29,8 +30,41 @@ export const BRAND = {
   ],
 };
 
+export const FOUNDERS = {
+  names: "Neha & Adnan",
+  title: "Co-Founders & Lead Planners",
+  photos: {
+    veil: "/images/founders/neha-adnan-veil.jpg",
+    dance: "/images/founders/neha-adnan-dance.jpg",
+  },
+  whyVesper: {
+    eyebrow: "Why “Vesper”?",
+    title: "A Quiet, Constant Light Guiding You to Your Big Day",
+    meaning:
+      "Vesper is the evening star, the first light to appear as the sky turns dark. It doesn’t shout for attention. It simply shines, calm and steady, reminding you that you’re never lost. We’ve always loved the stars, and that’s exactly what we hope to be for every couple we meet: a quiet, constant light guiding you to your big day.",
+  },
+  story: {
+    tagline: "You focus on each other. We’ll hold everything else.",
+    introHeading: "Hi, we’re Neha & Adnan.",
+    subheading: "Newlyweds, eldest children in our families, and the founders of Vesper Wedding Company.",
+    eldestParagraph:
+      "We’re newlyweds, and we’re both the eldest children in our families. If you’re the eldest too, you’ll know the feeling. You want everything to be perfect, not just for yourself but for everyone you love. You want your parents to be proud, your family to be happy, and every guest to feel welcome. Somewhere along the way, it becomes easy to forget that it’s your day too.",
+    planningParagraph:
+      "When it came to our own wedding, we planned every part of it ourselves. There were late nights with spreadsheets, endless calls with family and vendors, and the many “small” details that never really felt small. There were moments of excitement, and honestly, moments of exhaustion. We carried a lot, quietly, because that’s what we were used to doing.",
+    danceParagraph:
+      "And then came one moment we’ll never forget. In a dim room, under a single spotlight, with soft smoke drifting across the floor, we danced. For those few minutes, everything else disappeared: the planning, the pressure, the people watching. It was just the two of us, lost in our own world. That’s when we realised this is what a wedding is truly about.",
+    missionParagraph:
+      "That’s the moment we want to give back. We started Vesper Wedding Company so couples don’t have to carry it all alone. We take care of everything in between: the planning, the coordination, the family balancing, and every little detail that quietly adds up. We give your wedding the same care and attention we wished someone had given ours.",
+    closingPromise:
+      "With us by your side, you can feel secure, supported and truly relieved. You can be present, enjoy every moment, and look back knowing it was all exactly how you dreamed it would be.",
+    quote: "You focus on each other. We’ll hold everything else.",
+    signoff: "Let us be your guiding star. ✨",
+  },
+};
+
 export const ABOUT_COPY = {
-  opening: "Every wedding has a moment when the day softens: the light turns golden, the guests gather, and everything you planned comes together. That moment is what we name ourselves after. Vesper is the evening star, the first light of the night, and the symbol of a new chapter beginning.",
+  opening:
+    "Vesper is the evening star, the first light to appear as the sky turns dark. It doesn’t shout for attention. It simply shines, calm and steady, reminding you that you’re never lost. That quiet, constant light is what we promise to be for every couple we meet.",
   paragraphs: [
     "Vesper Wedding Company was created in the UAE, a place where cultures meet and celebrations are as diverse as the couples who plan them. We saw that many couples love the idea of their wedding but feel overwhelmed by the reality: dozens of suppliers, endless decisions, and the worry that something will slip on the day. We also saw that in the rush of planning, couples often forget to prepare themselves.",
     "So we built Vesper around both. We act as your single point of contact, bringing together the right venues, designers, caterers, photographers, and entertainers for your vision and budget. From your first conversation to the final goodbye, we guide the planning, coordinate every detail, and stay calm when it matters most.",

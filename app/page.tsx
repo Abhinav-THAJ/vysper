@@ -492,7 +492,7 @@ export default function HomePage() {
       <ConsultationCTA
         variant="navy"
         title="Let's create something unforgettable."
-        subtitle="Speak directly with Adnan Ibn Zain to explore dates, venues, and bespoke coordination across Dubai, Abu Dhabi, and all seven Emirates."
+        subtitle="Speak directly with Neha & Adnan to explore dates, venues, and bespoke coordination across Dubai, Abu Dhabi, and all seven Emirates."
       />
     </div>
   );
